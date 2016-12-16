@@ -204,15 +204,14 @@ int main(int argc, char *argv[])
 	      xmin = ray[j].x;
 	      xmax = ray[j+1].x;
 	      
-	      ymin = pos[i].y;
-	      ymax = pos[i+1].y;
+	      ymin = ray[j].y;
+	      ymax = ray[j+1].y;
 	      
 	      if( ( pos[i].y >=ymin) && ( pos[i].y < ymax ) )
-		if( ( pos[i].x >=xmin) && ( pos[i].x < xmax ) )
-		  {
-		    radon +=  pos[i].fxy; 
-		    fprintf(out3,"%lf %d\n",radon, angu);
-		  }
+		{
+		  radon +=  pos[i].fxy; 
+		  fprintf(out3,"%lf %d\n",radon, angu);
+		}
 	      
 	    }
 	}
